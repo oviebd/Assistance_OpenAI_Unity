@@ -82,7 +82,7 @@ public class CreateRunRequestModel
 }
 
 [Serializable]
-// Create and get status
+// Create and get status &tool
 public class CreateRunResponseModel
 {
     public string id;
@@ -97,5 +97,40 @@ public class CreateRunResponseModel
 }
 
 #endregion Run
+
+#region Tool
+
+[Serializable]
+public class SubmitToolRequestModel
+{
+    public List<ToolOutputModel> tool_outputs;
+
+    public string ToBody()
+    {
+        var jsonString = JsonUtility.ToJson(this);
+        Debug.Log("STR >> " + jsonString);
+        return jsonString;
+    }
+
+    public SubmitToolRequestModel(List<ToolOutputModel> _outputs)
+    {
+        tool_outputs = _outputs;
+    }
+}
+
+[Serializable]
+public class ToolOutputModel
+{
+    public string tool_call_id;
+    public string output;
+
+    public ToolOutputModel(string callId, string _output)
+    {
+        tool_call_id = callId;
+        output = _output;
+    }
+}
+
+#endregion Tool
 
 

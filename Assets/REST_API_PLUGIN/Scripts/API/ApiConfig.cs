@@ -45,13 +45,13 @@ namespace REST_API_HANDLER
 
 		public string GetSendMessageUrl(string threadId)
         {
-			return OPEN_API_BASE_URL + threadId + "/messages";
+			return OPEN_API_BASE_URL + "threads/" + threadId + "/messages";
 
 		}
 
 		public string GetThreadRunUrl(string threadId)
 		{
-			return OPEN_API_BASE_URL + threadId + "/runs";
+			return OPEN_API_BASE_URL + "threads/" + threadId + "/runs";
 		}
 
 		public string GetThreadRunStatusUrl(string threadId, string runId)
