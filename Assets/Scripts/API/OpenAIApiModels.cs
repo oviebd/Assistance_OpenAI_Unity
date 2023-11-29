@@ -134,3 +134,102 @@ public class ToolOutputModel
 #endregion Tool
 
 
+#region Status
+
+[Serializable]
+public class GetStatusResponseModel
+{
+    public string id;
+    public int created_at;
+    public string assistant_id;
+    public string thread_id;
+    public string status;
+    public int started_at;
+    public int expires_at;
+ 
+    public RequiredAction required_action;
+   
+    public string model;
+    public string instructions;
+    public List<Tool> tools;
+ 
+    
+}
+[Serializable]
+public class RequiredAction
+{
+    public string type;
+    public SubmitToolOutputs submit_tool_outputs;
+}
+[Serializable]
+public class SubmitToolOutputs
+{
+    public List<ToolCall> tool_calls;
+}
+[Serializable]
+public class Tool
+{
+    public string type;
+    public Function function;
+}
+[Serializable]
+public class ToolCall
+{
+    public string id;
+    public string type;
+    public Function function;
+}
+[Serializable]
+public class Function
+{
+    public string name;
+    public string arguments;
+    public string description;
+   // public Parameters parameters;
+}
+
+#endregion Status
+
+
+
+#region Message
+[Serializable]
+
+public class ThreadMessagesResponseModel
+{
+    public List<ThreadMessagesModel> data;
+    public string first_id;
+    public string last_id;
+    public bool has_more;
+}
+
+
+[Serializable]
+public class ThreadMessagesModel
+{
+    public string id;
+    public int created_at;
+    public string thread_id;
+    public string role;
+    public List<MessageContent> content;
+    public string assistant_id;
+    public string run_id;
+  
+}
+
+
+public class Message
+{
+    public int created_at;
+    public string role;
+    public string message;
+
+    public Message(int _createdAt, string _role, string _message)
+    {
+        created_at = _createdAt;
+        role = _role;
+        message = _message;
+    }
+}
+
+#endregion Message

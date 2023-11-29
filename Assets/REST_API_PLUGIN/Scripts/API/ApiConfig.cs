@@ -79,7 +79,7 @@ namespace REST_API_HANDLER
 			return headers;
 		}
 
-		public Dictionary<string, string> GetHeaOpenAIHeaders()
+		public Dictionary<string, string> GetOpenAIHeaders()
 		{
 			Dictionary<string, string> headers = new Dictionary<string, string>();
 			//headers.Add("Content-type", "application/json; charset=UTF-8");
