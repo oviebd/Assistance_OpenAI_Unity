@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class LoadingPanel : MonoBehaviour
 {
-    [HideInInspector]
-    public static LoadingPanel instance; 
+    //[HideInInspector]
+    //public static LoadingPanel instance; 
 
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-    }
+    //private void Awake()
+    //{
+    //    if (instance == null)
+    //    {
+    //        instance = this;
+    //    }
+    //}
 
     public void Hide()
     {

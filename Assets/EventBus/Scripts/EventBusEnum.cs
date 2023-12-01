@@ -9,7 +9,10 @@ namespace EventBus
         public enum EventName
         {
             THEME_CHANGE,
-            COUNT_UPDATED
+            COUNT_UPDATED,
+
+            OnMessageReceived,
+            OnApiCallCompleted
         }
     }
 }
