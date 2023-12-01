@@ -10,7 +10,7 @@ public class ChatApiManager
     private string message = "";
 
     public string assistantId = "asst_sgjlg3pltKFAzIu5t98oQMF6";
-    private string instructions = "When the user inputs \"1\", call function \"function1\". When the call was a success, answer with \"1 was received\". When the user inputs anything else, just answer with \"ok\"";
+    private string instructions;// = "When the user inputs \"1\", call function \"function1\". When the call was a success, answer with \"1 was received\". When the user inputs anything else, just answer with \"ok\"";
 
     private string runId = "";
 
@@ -18,6 +18,7 @@ public class ChatApiManager
     public ChatApiManager(string assistantId)
     {
         this.assistantId = assistantId;
+        instructions = AppData.instance.GetAsiistantInstruction();
     }
 
     public void InitiateAssistantRequest(string assistantCommand)

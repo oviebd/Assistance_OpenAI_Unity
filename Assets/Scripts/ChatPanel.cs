@@ -4,16 +4,18 @@ using UnityEngine;
 using REST_API_HANDLER;
 using System;
 using EventBus;
+using UnityEngine.SceneManagement;
 
 public class ChatPanel : MonoBehaviour
 {
-    public string assistantId = "asst_sgjlg3pltKFAzIu5t98oQMF6";
+    public string assistantId;
     public LoadingPanel loadingPanel;
     private ChatApiManager apiManager;
     private ShowChatPanel chatLoaderPanel;
 
     private void Awake()
     {
+        assistantId = AppData.instance.GetAssistantData().assistantId;
         apiManager = new ChatApiManager(assistantId);
         chatLoaderPanel = GetComponent<ShowChatPanel>();
     }
@@ -54,7 +56,13 @@ public class ChatPanel : MonoBehaviour
         }
     }
 
- 
+    public void GoBack()
+    {
+        AppData.instance.SetAssistantData(null);
+        SceneManager.LoadScene("SelectAssistantScece", LoadSceneMode.Single);
+    }
+
+
 }
 
 
