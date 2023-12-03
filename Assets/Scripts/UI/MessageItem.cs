@@ -19,11 +19,11 @@ public class MessageItem : MonoBehaviour
         messageText.text = message.message;
         if (message.role == "user")
         {
-            bg.color = Color.green;
+            //bg.color = Color.green;
         }
         else
         {
-            bg.color = Color.red;
+            bg.color = Color.yellow;
         }
     }
 }

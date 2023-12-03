@@ -11,7 +11,7 @@ namespace REST_API_HANDLER
 	public class HttpClient : MonoBehaviour
 	{
 		public static HttpClient instance;
-		private readonly int TIMEOUT = 50000;
+		private readonly int TIMEOUT = 50;
 
 
 
