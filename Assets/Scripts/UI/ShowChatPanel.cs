@@ -15,7 +15,26 @@ public class ShowChatPanel : MonoBehaviour
     public void OnAllMessageUpdate(List<Message> messageList)
     {
         DeleteAll();
+        messages = new List<Message>();
+        //Debug.Log("U>> original - ");
+        //for (int i = 0; i < messageList.Count; i++)
+        //{
+        //    print(messageList[i].message);
+        //    messages.Add(messageList[i]);
+        //}
+
         messages = messageList;
+        messages.Reverse();
+
+       // Debug.Log("U>> reversed - " );
+
+        //for (int i = 0; i < messages.Count; i++)
+        //{
+        //    Debug.Log(messages[i].message);
+        //}
+
+        
+       
 
         for (int i = 0; i < messages.Count; i++)
         {

@@ -13,6 +13,8 @@ public class ChatPanel : MonoBehaviour
     private ChatApiManager apiManager;
     private ShowChatPanel chatLoaderPanel;
 
+    List<Message> messages = new List<Message>();
+
     private void Awake()
     {
         assistantId = AppData.instance.GetAssistantData().assistantId;
@@ -33,6 +35,9 @@ public class ChatPanel : MonoBehaviour
 
     public void OnChatMessageOptionButtonPressed(int option)
     {
+        //Message messaqge = new Message(0, "user", option.ToString());
+        //messages.Add(messaqge);
+        //chatLoaderPanel.OnAllMessageUpdate(messages);
         loadingPanel.Show();
         apiManager.InitiateAssistantRequest(option.ToString());
     }
